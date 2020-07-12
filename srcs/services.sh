@@ -6,12 +6,13 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/11 19:16:25 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/11 19:18:28 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 16:17:51 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
 
+echo "services.sh start"
 # Initialize NGINX, MySQL and PHP-FPM
 service nginx start
 service mysql start
@@ -34,3 +35,6 @@ echo "
 "
 # Start container's shell
 bash
+
+# Run container for undetermined time
+tail -f /dev/null

@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/06 21:39:34 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/12 15:59:33 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 16:10:02 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,6 @@ FROM debian:buster
 
 # Run installation non-interactively (faster)
 ARG DEBIAN_FRONTEND=noninteractive
-
-# Set the working directory for webserver
-WORKDIR /var/www/localhost
 
 # Copy setup files to container
 COPY srcs /tmp/
@@ -32,5 +29,5 @@ RUN apt-get update && apt-get upgrade -u && apt-get install -y wget\
 RUN bash /tmp/setup.sh
 EXPOSE 80 443 3306
 
-# Initialize servicesqq
+# Start services
 ENTRYPOINT ["/tmp/services.sh"]
