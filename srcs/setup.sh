@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 10:50:25 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/12 15:53:08 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 16:02:33 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@
 
 # setup files' directory
 SETUP_DIR=/tmp/setup
+cd $SETUP_DIR
 # ft_server's directory
 SERVER_DIR=/var/www/localhost
 
@@ -60,10 +61,11 @@ mysqladmin --user=root password ""
 # phpMyAdmin directory
 PHPMYADMIN_DIR=$SERVER_DIR/phpmyadmin
 # Extract and move folder to correct directory
-tar -xf $SETUP_DIR/phpMyAdmin-5.0.2-english.tar.gz
-rm -rf $SETUP_DIR/phpMyAdmin-5.0.2-english.tar.gz
-ls $SETUP_DIR
-mv $SETUP_DIR/phpMyAdmin-5.0.2-english $SERVER_DIR/phpmyadmin
+wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.tar.gz
+tar -xf phpMyAdmin-5.0.2-english.tar.gz
+rm -rf phpMyAdmin-5.0.2-english.tar.gz
+echo "ls:" && ls
+mv phpMyAdmin-5.0.2-english $SERVER_DIR/phpmyadmin
 cp -pr $SETUP_DIR/config.inc.php $SERVER_DIR/phpmyadmin/config.inc.php
 chown -R www-data:www-data $SERVER_DIR/phpmyadmin
 

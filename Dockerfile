@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/06 21:39:34 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/12 15:40:09 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 15:59:33 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ COPY srcs /tmp/
 # Install OS updates and webserver tools
 # * -y: Automatic yes to prompts; assume "yes" as answer to all prompts and run
 #		non-interactively.
-RUN apt-get update && apt-get upgrade -u && apt-get install -y \
+RUN apt-get update && apt-get upgrade -u && apt-get install -y wget\
 	nginx openssl mariadb-server php php-fpm php-mysql php-cli php-mbstring
 
 # Run setup script
