@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 10:50:25 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/12 15:42:13 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 15:53:08 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,8 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 # -.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-
 # MySQL database setup and configuration (without password)
-mysql -e "CREATE USER 'root' IDENTIFIED BY '';"
-mysql -e "CREATE DATABASE phpmyadmin;"
-mysql -e "CREATE DATABASE wordpress;"
+echo "CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;" | mysql -u root
+mysqladmin --user=root password ""
 
 
 # -.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-
@@ -63,6 +62,7 @@ PHPMYADMIN_DIR=$SERVER_DIR/phpmyadmin
 # Extract and move folder to correct directory
 tar -xf $SETUP_DIR/phpMyAdmin-5.0.2-english.tar.gz
 rm -rf $SETUP_DIR/phpMyAdmin-5.0.2-english.tar.gz
+ls $SETUP_DIR
 mv $SETUP_DIR/phpMyAdmin-5.0.2-english $SERVER_DIR/phpmyadmin
 cp -pr $SETUP_DIR/config.inc.php $SERVER_DIR/phpmyadmin/config.inc.php
 chown -R www-data:www-data $SERVER_DIR/phpmyadmin
