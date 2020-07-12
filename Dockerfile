@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/06 21:39:34 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/11 19:19:06 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 15:40:09 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FROM debian:buster
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Set the working directory for webserver
-WORKDIR /var/www/ft_server/public_html
+WORKDIR /var/www/localhost
 
 # Copy setup files to container
 COPY srcs /tmp/

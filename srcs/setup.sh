@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 10:50:25 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/12 15:15:52 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 15:42:13 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,12 +49,10 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 
 
 # -.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-
-# MySQL database setup and configuration
-USER=user42
-mysql -e "CREATE USER '$USER' IDENTIFIED BY '$USER';"
+# MySQL database setup and configuration (without password)
+mysql -e "CREATE USER 'root' IDENTIFIED BY '';"
 mysql -e "CREATE DATABASE phpmyadmin;"
 mysql -e "CREATE DATABASE wordpress;"
-mysql -e "GRANT ALL PRIVILEGES ON *.* TO '$USER';"
 
 
 # -.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-
