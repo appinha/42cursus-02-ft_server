@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 11:33:59 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/09 19:59:43 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 17:42:15 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@
 # This script turns autoindex on or off according to argument $1
 
 INDEX=$1
-NGINX_CONF=/etc/nginx/sites-available/ft_server.com.conf
-#NGINX_CONF=setup/ft_server.com.conf
+NGINX_CONF=/etc/nginx/sites-available/nginx.conf
 
 if [[ "$INDEX" == "on" || "$INDEX" == "off" ]];
 then

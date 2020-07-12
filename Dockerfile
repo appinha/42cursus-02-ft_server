@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/06 21:39:34 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/12 16:10:02 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 18:07:48 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,11 @@ COPY srcs /tmp/
 # * -y: Automatic yes to prompts; assume "yes" as answer to all prompts and run
 #		non-interactively.
 RUN apt-get update && apt-get upgrade -u && apt-get install -y wget\
-	nginx openssl mariadb-server php php-fpm php-mysql php-cli php-mbstring
+	nginx openssl mariadb-server php7.3 php-fpm php-mysql php-cli php-mbstring
 
 # Run setup script
 RUN bash /tmp/setup.sh
 EXPOSE 80 443 3306
 
 # Start services
-ENTRYPOINT ["/tmp/services.sh"]
+ENTRYPOINT bash /tmp/services.sh
