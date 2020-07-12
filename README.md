@@ -19,9 +19,12 @@ An **image** is an object that you can download and reuse to instantiate new con
 
 **Docker commands:**
 
-* `docker build -t [image_name]` - Build an image from a Dockerfile (in current location).
 * `docker images` - List all docker images.
+* `docker rmi [image_name]` - Remove image.
+* `docker build -t [image_name] .` - Build an image from a Dockerfile (in current location).
+
 * `docker run --name [container_name] image` - Start a container from an image, with a custom name.
+* `docker run --name [container_name] -it -p 80:80 -p 443:443 [name]` - `-i` interactive
 * `docker start|stop [container_name]` - Start or stop an existing container.
 * `docker ps` - List **currently running** docker containers.
 * `docker ps -a` - List **all** docker containers (running and stopped).

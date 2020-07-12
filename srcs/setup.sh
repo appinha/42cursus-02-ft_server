@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 10:50:25 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/11 19:13:15 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/12 15:15:52 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@
 # setup files' directory
 SETUP_DIR=/tmp/setup
 # ft_server's directory
-SERVER_DIR=/var/www/ft_server/public_html
+SERVER_DIR=/var/www/localhost
 
 # -.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-
 # NGINX server configuration
@@ -44,8 +44,8 @@ ln -s $NGINX_DIR/sites-available/ft_server.com.conf $NGINX_DIR/sites-enabled/
 # - C=country ST=state L=location O=organization CN=name
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 	-subj '/C=BR/ST=SP/L=SP/O=42saopaulo/CN=apuchill' \
-	-keyout /etc/ssl/certs/ft_server.key \
-	-out /etc/ssl/certs/ft_server.crt
+	-keyout /etc/ssl/certs/localhost.key \
+	-out /etc/ssl/certs/localhost.crt
 
 
 # -.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-
