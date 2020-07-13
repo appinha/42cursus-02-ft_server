@@ -22,12 +22,11 @@ COPY srcs /tmp/
 # Install OS updates and webserver tools
 # * -y: Automatic yes to prompts; assume "yes" as answer to all prompts and run
 #		non-interactively.
-RUN apt-get update && apt-get upgrade -u && apt-get install -y wget\
+RUN apt-get update && apt-get upgrade -u && apt-get install -y \
 	nginx openssl mariadb-server php7.3 php-fpm php-mysql php-cli php-mbstring
 
 # Run setup script
 RUN bash /tmp/setup.sh
-EXPOSE 80 443 3306
 
 # Start services
 ENTRYPOINT bash /tmp/services.sh
