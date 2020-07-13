@@ -37,6 +37,10 @@ Reference: [Docker Documentation - CLI](https://docs.docker.com/engine/reference
 
 [**NGINX**](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/?_ga=2.203137169.148315847.1594301020-870972343.1594301020) (read as "engine-x"	) is a lightweight, high-performance web server designed for high-traffic use cases.
 
+### Wordpress
+
+* [Wordpress login page](https://localhost/wordpress/wp-login.php)
+
 ### Useful Links
 
 * [Docker](https://www.docker.com/)
