@@ -6,7 +6,7 @@
 #    By: apuchill <apuchill@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 10:50:25 by apuchill          #+#    #+#              #
-#    Updated: 2020/07/12 18:11:42 by apuchill         ###   ########.fr        #
+#    Updated: 2020/07/16 17:38:54 by apuchill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ cd /tmp/setup
 
 # -.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-
 # NGINX server configuration
-# - Reference:
+# * Reference:
 # https://www.linode.com/docs/web-servers/nginx/how-to-configure-nginx/
 
 # NGINX directory
@@ -43,7 +43,10 @@ ln -s $NGINX_DIR/sites-available/nginx.conf $NGINX_DIR/sites-enabled/
 
 # -.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-.-'-
 # SSL Certificate configuration
-# - C=country ST=state L=location O=organization CN=name
+# * rsa:2048 – generate a 2048-bit RSA mathematical key
+# * C=country ST=state L=location O=organization OU=organization unit CN=name
+# * –keyout – indicates the domain you’re generating a key for
+# * –out – specifies the name of the file your CSR will be saved as
 
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 	-subj '/C=BR/ST=SP/L=SP/O=42/OU=42saopaulo/CN=apuchill' \
