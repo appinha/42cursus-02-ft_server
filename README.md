@@ -12,7 +12,7 @@ For further information about **42cursus** and this project, please refer to [42
 
 `@/srcs/`
 
-* **setup.sh** - script for setup configuration - installs and configures all requested services.
+* **setup.sh** - script for setup configuration: installs and configures all requested services.
 * **services.sh** - script for initialization of webserver's services.
 * **autoindex.sh** - script for turning autoindex on or off.
 * **testing.sh** - script (with docker commands) for testing the project.
@@ -80,6 +80,8 @@ Reference: [Docker Documentation - CLI](https://docs.docker.com/engine/reference
 [**WordPress**](https://en.wikipedia.org/wiki/WordPress) (WP, [WordPress.org](https://wordpress.org/)) is a free and open-source content management system (CMS) written in PHP and paired with a MySQL or MariaDB database.
 
 * Wordpress login page: https://localhost/wordpress/wp-login.php
+
+---
 
 ### Useful Links
 
